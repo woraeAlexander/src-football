@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SRC Sports Academy - Explore diverse sports programs including wrestling, taekwondo, judo, volleyball, football, rugby, ballet, table tennis, handball, and gymnastics.">
+    <meta name="keywords" content="sports academy, university sports, wrestling, taekwondo, judo, volleyball, football, rugby">
+    <title>PENTECOST UNIVERSITY SRC Sports Academy - Premier Sports Training Platform</title>
+    
+    <!-- External CSS -->
+    <style>
+/* ===================================
+   RESPONSIVE CSS FRAMEWORK
+   SRC Sports Academy Website
+   ==================================== */
+
+/* Root Variables */
+:root {
+    --primary-color: #0e3a64;
+    --secondary-color: #16608c;
+    --accent-color: #ff8f00;
+    --light-bg: #f4f7fb;
+    --text-dark: #1f2a38;
+    --text-light: #556677;
+    --border-color: #d9e2ec;
+    --success-color: #2e7d32;
+    --warning-color: #f9a825;
+    --error-color: #c62828;
+    --transition: all 0.25s ease;
+}
+
+/* ===================================
+   RESET & GLOBAL STYLES
+   ==================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.75;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+}
+
+/* ===================================
+   TYPOGRAPHY
+   ==================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* ===================================
+   CONTAINERS & SECTIONS
+   ==================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section.hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: #fff;
+    text-align: center;
+}
+
+/* ===================================
+   HEADER & NAVIGATION
+   ==================================== */
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-dark);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: var(--transition);
+    position: relative;
+}
+
+nav a:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.25s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--primary-color);
+}
+
+nav a:hover:after,
+nav a:focus:after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ===================================
+   BUTTONS
+   ==================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(14, 58, 100, 0.18);
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+    background-color: #ff9f1c;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(255, 143, 0, 0.2);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* ===================================
+   FORMS
+   ==================================== */
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(42, 82, 152, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.form-check input[type="checkbox"],
+.form-check input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+/* ===================================
+   CARDS
+   ==================================== */
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+}
+
+.card-left,
+.card-right {
+    flex-direction: column;
+}
+
+@media (min-width: 900px) {
+    .card-left,
+    .card-right {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .card-right {
+        flex-direction: row-reverse;
+    }
+}
+
+.card-media {
+    width: 100%;
+    min-height: 240px;
+    overflow: hidden;
+    flex: 1 1 40%;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    position: relative;
+    z-index: 2;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.92);
+    flex: 1 1 60%;
+}
+
+.testimonial-img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card-feature-list {
+    margin: 1rem 0 1.25rem;
+    padding-left: 1.25rem;
+    list-style-type: disc;
+    color: var(--text-color);
+}
+
+.card-feature-list li {
+    margin-bottom: 0.65rem;
+}
+.card:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    transform: translateY(-6px);
+}
+
+.card-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 1;
+}
+
+.card-bg-image {
+    display: block;
+    opacity: 1;
+}
+
+.card-header {
+    padding: 20px;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-body {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.card-footer {
+    padding: 15px 20px;
+    background-color: var(--light-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.section-headline {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.25rem;
+    letter-spacing: -0.03em;
+}
+
+.section-alt {
+    background-color: var(--light-bg);
+}
+
+.search-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.hero-actions,
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.text-soft {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+}
+
+.link-secondary {
+    color: var(--secondary-color);
+}
+
+.link-secondary:hover {
+    color: var(--accent-color);
+}
+
+.table-basic {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-basic th,
+.table-basic td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-basic th {
+    border-bottom: 2px solid var(--border-color);
+}
+
+.panel-box {
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.panel-border {
+    border-left: 4px solid var(--secondary-color);
+}
+
+.card-header.gradient-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: #fff;
+}
+
+.card-header.gradient-accent {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #ee5a6f 100%);
+    color: #fff;
+}
+
+.card-header.gradient-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    color: #fff;
+}
+
+.card-header.gradient-secondary {
+    background: linear-gradient(135deg, #009688 0%, #00897b 100%);
+    color: #fff;
+}
+
+.card-header h3 {
+    margin-bottom: 0;
+}
+
+.card-header small {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+}
+
+.footer-link:hover {
+    color: #fff;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.highlight-banner {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.highlight-banner .section-copy {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.section-copy {
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.btn-full {
+    flex: 1 1 100%;
+}
+
+.ml-2 {
+    margin-left: 1.5rem;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.gap-3 {
+    gap: 3rem;
+}
+
+.grid-gap-1 {
+    gap: 1rem;
+}
+
+.card-border-left {
+    border-left: 4px solid var(--accent-color);
+}
+
+.panel-accent {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+}
+
+.panel-secondary {
+    border-left: 4px solid var(--secondary-color);
+}
+
+.text-highlight {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+}
+
+.leader-title {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.content-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.panel-warning {
+    background-color: #fff3cd;
+    border-left: 4px solid var(--warning-color);
+}
+
+.gap-3 {
+    gap: 3rem;
+}
+
+.panel-warning {
+    background-color: #fff3cd;
+    border-left: 4px solid var(--warning-color);
+}
+
+@media (min-width: 640px) {
+    .btn-full {
+        flex: 1;
+        width: auto;
+    }
+}
+
+
+/* ===================================
+   GRID LAYOUTS
+   ==================================== */
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* ===================================
+   FOOTER
+   ==================================== */
+
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 30px;
+}
+
+.footer-section h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+
+/* ===================================
+   HERO SECTION
+   ==================================== */
+
+.hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(255, 143, 28, 0.18), transparent 40%), linear-gradient(180deg, rgba(15, 32, 64, 0.65), rgba(15, 32, 64, 0.85));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    max-width: 760px;
+    padding: 0 20px;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.7;
+}
+
+.hero-image {
+    opacity: 1;
+}
+
+.hero h1 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+}
+
+.hero p {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.eyebrow {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.hero-actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* ===================================
+   UTILITIES
+   ==================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 420px;
+    border-radius: 8px;
+    padding: 15px;
+    color: white;
+    z-index: 9999;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.notification-success {
+    background-color: var(--success-color);
+}
+
+.notification-error {
+    background-color: var(--error-color);
+}
+
+.notification-warning {
+    background-color: var(--warning-color);
+    color: #333;
+}
+
+.notification-info {
+    background-color: var(--secondary-color);
+}
+
+.notification-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-content p {
+    margin: 0;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.p-1 { padding: 0.5rem; }
+.p-2 { padding: 1rem; }
+.p-3 { padding: 1.5rem; }
+.p-4 { padding: 2rem; }
+
+.hidden {
+    display: none !important;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   ==================================== */
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 1rem;
+        gap: 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    nav a:after {
+        display: none;
+    }
+
+    nav a:hover {
+        background-color: var(--light-bg);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 15px;
+    }
+
+    section {
+        padding: 30px 0;
+    }
+
+    .hero {
+        min-height: 55vh;
+        padding: 1.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* ===================================
+   ACCESSIBILITY
+   ==================================== */
+
+:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+button:focus-visible {
+    outline: 3px dashed var(--secondary-color);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===================================
+   HIGH CONTRAST MODE
+   ==================================== */
+
+@media (prefers-contrast: more) {
+    .card {
+        border: 2px solid var(--text-dark);
+    }
+
+    button {
+        border: 2px solid currentColor;
+    }
+}
+
+</style>
+    
+    <!-- Favicon -->
+</head>
+<body>
+    <!-- ====================================
+         HEADER & NAVIGATION
+         ==================================== -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" aria-label="SRC Sports Academy Home">Pentecost University SRC Sports Academy</a>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <nav aria-label="Main navigation">
+                    <ul role="menubar">
+                        <li role="presentation"><a href="index.html" role="menuitem">Home</a></li>
+                        <li role="presentation"><a href="pages/about.html" role="menuitem">About</a></li>
+                        <li role="presentation"><a href="pages/new-activities.html" role="menuitem">Programs</a></li>
+                        <li role="presentation"><a href="pages/events.html" role="menuitem">Events</a></li>
+                        <li role="presentation"><a href="pages/blog.html" role="menuitem">News</a></li>
+                        <li role="presentation"><a href="pages/book-online.html" role="menuitem">Book Online</a></li>
+                        <li role="presentation"><a href="pages/register.html" role="menuitem">Join Now</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Hamburger Menu -->
+                <div class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ====================================
+         HERO SECTION
+         ==================================== -->
+    <section class="hero" id="hero">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="IMAGES/photo_2026-05-11_11-58-54.jpg">
+            <source src="IMAGES/video_2026-05-11_11-56-57.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <span class="eyebrow">Elite Sports Development</span>
+            <h1>Building Champions at Pentecost University SRC</h1>
+            <p>Professional coaching, state-of-the-art facilities, and tailored programs for athletes at every level.</p>
+            <div class="hero-actions">
+                <a href="pages/book-online.html" class="btn btn-accent">Book a Trial Session</a>
+                <a href="pages/register.html" class="btn btn-outline">Become a Member</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         SEARCH BAR
+         ==================================== -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-row" role="search">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Search programs, events, or membership opportunities..." 
+                    aria-label="Search sports programs and events"
+                >
+                <button id="search-btn" class="btn btn-primary">Search</button>
+            </div>
+            <div id="search-results"></div>
+        </div>
+    </section>
+
+    
+
+    <!-- ====================================
+         SPORTS OFFERINGS SECTION
+         ==================================== -->
+    <section id="sports-offerings">
+        <div class="container">
+            <h2 class="section-headline">Featured Sports Programs</h2>
+            
+            <div class="grid grid-3">
+                <!-- Existing Sports -->
+                <div class="card" data-searchable data-title="Football Program">
+                    <img class="testimonial-img" src="IMAGES/photo_2026-05-13_14-51-26.jpg" alt="Football training session">
+                    <div class="card-body">
+                        <h3>Football</h3>
+                        <p>High-performance football training for every level, with coaching focused on tactical excellence and teamwork.</p>
+                        <ul class="card-feature-list">
+                            <li>Elite attacking and defensive drills</li>
+                            <li>Speed, stamina and team strategy</li>
+                        </ul>
+                        <a href="pages/events.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="card" data-searchable data-title="Rugby Program">
+                    <img class="testimonial-img" src="IMAGES/photo_2026-05-13_14-51-51.jpg" alt="Rugby players in action">
+                    <div class="card-body">
+                        <h3>🏉 Rugby</h3>
+                        <p>Build strength and teamwork through rugby. Experience intense training and competitive tournaments.</p>
+                        <ul class="card-feature-list">
+                            <li>Powerful contact drills</li>
+                            <li>Teamwork and live game strategy</li>
+                        </ul>
+                        <a href="pages/events.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="card" data-searchable data-title="Ballet Program">
+                    <img class="testimonial-img" src="IMAGES/photo_2026-05-13_14-51-55.jpg" alt="Ballet dancer performing">
+                    <div class="card-body">
+                        <h3>🩰 Ballet</h3>
+                        <p>Master classical ballet technique and grace. Perfect for dancers of all backgrounds and experience levels.</p>
+                        <ul class="card-feature-list">
+                            <li>Precision and performance training</li>
+                            <li>Flexibility, balance and artistic expression</li>
+                        </ul>
+                        <a href="pages/events.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="card" data-searchable data-title="Table Tennis Program">
+                    <img class="testimonial-img" src="IMAGES/photo_2026-05-13_14-52-01.jpg" alt="Table tennis match">
+                    <div class="card-body">
+                        <h3>🏓 Table Tennis</h3>
+                        <p>Develop precision and speed in table tennis. Compete at various levels in our well-equipped facilities.</p>
+                        <ul class="card-feature-list">
+                            <li>Accuracy and reflex conditioning</li>
+                            <li>Fast footwork and tactical play</li>
+                        </ul>
+                        <a href="pages/events.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                    
+                <div class="card" data-searchable data-title="Handball Program">
+                    <img class="testimonial-img" src="IMAGES/photo_2026-05-14_00-38-03.jpg" alt="Handball players in motion">
+                    <div class="card-body">
+                        <h3>🤝 Handball</h3>
+                        <p>High-energy handball training combining strength and tactical skill. Perfect for team players.</p>
+                        <ul class="card-feature-list">
+                            <li>Fast-paced attacking and defense</li>
+                            <li>Team coordination and court awareness</li>
+                        </ul>
+                        <a href="pages/events.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="card" data-searchable data-title="Gymnastics Program">
+                    <img class="testimonial-img" src="IMAGES/photo_2026-05-14_00-38-08.jpg" alt="Gymnastics athlete performing">
+                    <div class="card-body">
+                        <h3>🤸 Gymnastics</h3>
+                        <p>Develop flexibility, strength, and body control through gymnastics. Programs for beginners to advanced.</p>
+                        <ul class="card-feature-list">
+                            <li>Balance, agility and strength training</li>
+                            <li>Progressive routines for all skill levels</li>
+                        </ul>
+                        <a href="pages/events.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         NEW SPORTS HIGHLIGHT
+         ==================================== -->
+    <section class="section-alt">
+        <div class="container">
+            <h2 class="section-headline">🆕 New Sports Programs</h2>
+            
+            <div class="grid grid-2">
+                <div class="card" data-searchable data-title="Wrestling Program">
+                    <img class="testimonial-img" src="IMAGES/photo_2026-05-14_00-37-58.jpg" alt="Wrestling training session">
+                    <div class="card-body">
+                        <h3>Wrestling</h3>
+                        <p>Master the ancient art of wrestling. Build strength, discipline, and competitive spirit.</p>
+                        <ul class="card-feature-list">
+                            <li>Technique-focused grappling training</li>
+                            <li>Power, balance and endurance drills</li>
+                        </ul>
+                        <a href="pages/new-activities.html" class="btn btn-accent">Explore</a>
+                    </div>
+                </div>
+
+                <div class="card" data-searchable data-title="Taekwondo Program">
+                    <img class="testimonial-img" src="IMAGES/photo_2026-05-14_00-37-27.jpg" alt="Taekwondo training in action">
+                    <div class="card-body">
+                        <h3>Taekwondo</h3>
+                        <p>Learn Korean martial arts excellence. Develop discipline, focus, and self-defense skills.</p>
+                        <ul class="card-feature-list">
+                            <li>Precision kicking and sparring drills</li>
+                            <li>Confidence, discipline, and speed training</li>
+                        </ul>
+                        <a href="pages/new-activities.html" class="btn btn-accent">Explore</a>
+                    </div>
+                </div>
+
+                <div class="card" data-searchable data-title="Judo Program">
+                    <img class="testimonial-img" src="IMAGES/photo_2026-05-14_00-37-40.jpg" alt="Judo athletes practicing throws">
+                    <div class="card-body">
+                        <h3>Judo</h3>
+                        <p>Experience the way of gentleness. Build technique and confidence through judo training.</p>
+                        <ul class="card-feature-list">
+                            <li>Throwing, pins and groundwork practice</li>
+                            <li>Balance, control and mental focus</li>
+                        </ul>
+                        <a href="pages/new-activities.html" class="btn btn-accent">Explore</a>
+                    </div>
+                </div>
+
+                <div class="card" data-searchable data-title="Volleyball Program">
+                    <img class="testimonial-img" src="IMAGES/photo_2026-05-13_14-52-01.jpg" alt="Volleyball players jumping for a spike">
+                    <div class="card-body">
+                        <h3>Volleyball</h3>
+                        <p>Spike, set, and score! Join our volleyball teams and compete at various levels.</p>
+                        <ul class="card-feature-list">
+                            <li>Team offense and defense coordination</li>
+                            <li>Jump, serve and net play mastery</li>
+                        </ul>
+                        <a href="pages/new-activities.html" class="btn btn-accent">Explore</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <a href="pages/new-activities.html" class="btn btn-primary">View All New Sports</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         HIGHLIGHTS SECTION
+         ==================================== -->
+    <section id="highlights">
+        <div class="container">
+            <h2 class="section-headline">Why Choose Pentecost University SRC Sports Academy?</h2>
+            
+            <div class="grid grid-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3>Expert Coaches</h3>
+                        <p>Learn from experienced coaches with professional backgrounds in their respective sports.</p>
+                    </div>
+                </div>
+
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3>State-of-the-Art Facilities</h3>
+                        <p>Train in modern facilities equipped with the latest sports equipment and technology.</p>
+                    </div>
+                </div>
+
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3>Community Focused</h3>
+                        <p>Be part of a vibrant sports community that promotes excellence and mutual growth.</p>
+                    </div>
+                </div>
+
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3>Competitive Opportunities</h3>
+                        <p>Participate in tournaments and competitions at various levels of competition.</p>
+                    </div>
+                </div>
+
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3>Flexible Schedules</h3>
+                        <p>Training programs designed to fit your lifestyle with multiple session times.</p>
+                    </div>
+                </div>
+
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3>Personal Development</h3>
+                        <p>Beyond sports skills, develop teamwork, leadership, and personal discipline.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         TESTIMONIALS SECTION
+         ==================================== -->
+    <section class="section-alt">
+        <div class="container">
+            <h2 class="section-headline">Success Stories</h2>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="testimonial-img" src="IMAGES/photo_2026-05-14_00-37-52.jpg" alt="Football success story" />
+                        <p><em>"Joining PENTECOST UNIVERSITY SRC Sports Academy transformed my athletic journey. The coaches are incredible and the facilities are top-notch!"</em></p>
+                        <p><strong>- Sarah M., Football Player</strong></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img class="testimonial-img" src="IMAGES/photo_2026-05-14_00-37-46.jpg" alt="Rugby success story" />
+                        <p><em>"The community spirit at the academy is amazing. I've made lasting friendships while improving my skills."</em></p>
+                        <p><strong>- James K., Rugby Athlete</strong></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img class="testimonial-img" src="IMAGES/photo_2026-05-14_00-37-27.jpg" alt="Taekwondo success story" />
+                        <p><em>"Taekwondo training gave me confidence and discipline. Highly recommended for anyone looking to grow!"</em></p>
+                        <p><strong>- Maria L., Taekwondo Student</strong></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img class="testimonial-img" src="IMAGES/photo_2026-05-14_00-37-40.jpg" alt="Judo success story" />
+                        <p><em>"The booking system is convenient and the staff is always helpful. Best decision I made!"</em></p>
+                        <p><strong>- Ahmed H., Judo Practitioner</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         CTA SECTION
+         ==================================== -->
+    <section class="highlight-banner">
+        <div class="container">
+            <h2 class="text-white mb-3">Start Your Athletic Journey Today</h2>
+            <p class="text-soft section-copy">Secure your place in our academy and unlock your full potential with expert coaching and premium facilities.</p>
+            <div class="button-row">
+                <a href="pages/register.html" class="btn btn-accent">Join Now</a>
+                <a href="pages/book-online.html" class="btn btn-outline">Book a Session</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+         FOOTER
+         ==================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Pentecost University SRC Sports Academy delivers professional sports development through elite coaching, modern facilities, and a strong community focus.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/about.html">About</a></li>
+                        <li><a href="pages/events.html">Events</a></li>
+                        <li><a href="pages/blog.html">Blog</a></li>
+                        <li><a href="pages/new-activities.html">New Sports</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="pages/register.html">Register</a></li>
+                        <li><a href="pages/book-online.html">Book Online</a></li>
+                        <li><a href="pages/register.html">Newsletter</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/srcacademy" aria-label="Facebook">f</a>
+                        <a href="https://twitter.com/srcacademy" aria-label="Twitter">𝕏</a>
+                        <a href="https://instagram.com/srcacademy" aria-label="Instagram">📷</a>
+                        <a href="https://youtube.com/srcacademy" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 PENTECOST UNIVERSITY SRC Sports Academy. All rights reserved. | 👥 Visitors: <span id="visitor-counter">0</span> | <a href="#" class="footer-link">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-3gJwYpMe3p4C1Xn4G9ANOU5RkQ1c1wB2aBRvYTMXxcI=" crossorigin="anonymous"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>
